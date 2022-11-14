@@ -1,0 +1,435 @@
+@font-face {
+    font-family: "BPimperial Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("BPimperial Regular"), url("/fonts/BPimperial.woff") format("woff");
+    }
+    
+
+    @font-face {
+    font-family: "BPimperial Italic";
+    font-style: normal;
+    font-weight: normal;
+    src: local("BPimperial Italic"), url("/fonts/BPimperialItalic.woff") format("woff");
+    }
+    
+
+    @font-face {
+    font-family: "BPimperial Light";
+    font-style: normal;
+    font-weight: normal;
+    src: local("BPimperial Light"), url("/fonts/BPimperialLight.woff") format("woff");
+    }
+    
+
+    @font-face {
+    font-family: "BPimperial Light Italic";
+    font-style: normal;
+    font-weight: normal;
+    src: local("BPimperial Light Italic"), url("fonts/BPimperialLightItalic.woff") format("woff");
+    }
+  
+
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+/*SLIDER SHOW*/
+
+.swiper-slide.Show{
+    width: 100%;
+    height: 300px;
+}
+.swiper-slide.Show img{
+    width: 100%;
+    object-fit: cover;
+}
+.swiper.mySwiper2{
+    position:relative;
+
+}
+.swiper-pagination2{
+    position: absolute;
+    bottom: 5px;
+    margin-left: auto;
+    z-index: 1;
+    text-align: center;
+}
+.swiper-pagination-bullet-active:root:active{
+    color: #9d3be1
+}
+
+.swiper-button-next2{
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    color: #79ffa0;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+    line-height: 17px;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+	cursor: pointer;
+	-ms-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+    text-align: center;
+    z-index: 1;
+
+}
+
+.swiper-button-next2:hover{
+    background: rgba(0,0,0,0.8);
+    color: #9d3be1;
+}
+
+/*BOTTOM PAGE HOME*/
+.bottomHome{
+    padding: 30px 0px;
+}
+
+/*WEATHER WIDGET*/
+.containerBottom2{
+    margin-top: 20px;
+    /* margin-bottom: 10px; */
+    color: #ebebeb;
+}
+#openweathermap-widget-21{
+    display: none;
+}
+#openweathermap-widget-22{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*SECCIÓN PAQUETES*/
+
+.containerBottom{
+    margin-top: 10px;
+    /* margin-bottom: 10px; */
+    color: #ebebeb;
+}
+.swiper.mySwiper{
+    width: 100%;
+    height: 330px;
+}
+.swiper-pagination{
+    bottom: 10px;
+}
+
+.packages{
+    width: 100%;
+    height: 45vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    padding: 5px;
+    text-align: center;
+
+}
+
+.control{
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    color: #79ffa0;
+    cursor: pointer;
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+    line-height: 17px;
+    text-align: center;
+    align-self: center;
+}
+
+.control:hover{
+    color: #9d3be1;
+    background: rgba(0,0,0,0.8)
+}
+
+.product{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 90%;
+    height: 80%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    /* border-radius: 10%; */
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    transition: box-shadow 600ms;
+}
+
+.product:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 4px 4px 4px rgba(121, 255, 160, 0.5);
+}
+
+.picturePackage{
+    width: 95%;
+    height: 65%;
+    /* border-radius: 10%; */
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.pictureIn{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product p{
+    font-size: 15px;
+    font-weight: bold;
+    color: #79ffa0;
+    padding: 10px;
+    margin-top: 20px;
+    display: block;
+}
+
+.product p:hover{
+    color: #9d3be1;
+    text-shadow: #79ffa0;
+}
+
+.packages.s2{
+    display: none;
+}
+
+.packages.s3{
+    display: none;
+}
+/*SWIPER STYLE*/
+.swiper-slide{
+    display: flex;
+    justify-content: center;
+}
+
+
+/*SECCIÓN MENSAJES DE CLIENTES*/
+
+.clientMessages{
+    background-color: #ebebeb;
+    opacity: 110%;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card{
+    background-color: rgba(0, 0, 0, 0.90);
+    box-shadow: 2px 2px 2px rgba(121, 255, 160, 0.7);
+    border-radius: 5%;
+    opacity: 100%;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    margin-right: 10px;
+    position: relative;
+
+}
+
+.userImage{
+    width: 40%;
+    height: auto;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 5%;
+}
+
+.message{
+    width: 90%;
+    height: 50%;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    padding: 5px;
+    margin: 0px auto;
+    color: #9d3be1;
+}
+
+.message strong{
+    font-weight:bolder;
+}
+
+.controlMessages{
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    color: #79ffa0;
+    cursor: pointer;
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+    line-height: 17px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+}
+
+.controlMessages:hover{
+    color: #9d3be1;
+    background: rgba(0,0,0,0.8)
+
+}
+
+.anouncingTitle{
+    font-size: 18px;
+    font-weight: bold;
+    color: gray;
+    margin-left: 20px;
+}
+
+
+/*SECCIÓN MEDIA QUERIES*/
+
+@media (min-width: 426px){
+    .logo{
+        width: 15vw;
+        left: 42%;
+    }
+
+    .slideItem img{
+        width: 110%;
+        height: auto;
+        margin: -100px 0px 100px 0px;
+    }
+
+
+    .card{
+        border-radius: 0%;
+        padding-top: 10px;
+
+    }
+
+    .userImage{
+        width: 20%;
+    }
+
+    .controlMessages{
+        left: 50%;
+        bottom: 10%;
+    }
+
+    #openweathermap-widget-21{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #openweathermap-widget-22{
+        display: none;
+    }
+
+}
+
+
+
+@media (min-width: 769px){
+    .logo{
+        width: 8vw;
+        left: 45%;
+    }
+    .bottomBar{
+        height: 120px;
+    }
+    nav li{
+        display: flex;
+        margin-top: 50px;
+        font-size: 1.5vw;
+        padding-bottom: 10px;
+        justify-content: center;
+    }
+    .burgerMenu{
+        display: none;
+    }
+
+    .slide{
+        height: 50vh;
+    }
+
+    .slideItem img{
+        width: 100%;
+        margin: -200px auto 200px auto;
+    }
+
+    .slideControl{
+        font-size: 40px;
+        height: 40px;
+        width: 40px;
+        line-height: 35px;
+    }
+
+    .slideCircle{
+        font-size: 35px;
+    }
+
+    .containerBottom{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .containerBottom2{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .packages{
+        width: 95%;
+    }
+    
+    .packages.s2{
+        display: flex;
+    }
+    
+    .packages.s3{
+        display: flex;
+    }
+
+    .clientMessages{
+        width: 40%;
+        height: 300px;
+    
+    }
+
+    .card{
+        border-radius: 4%;
+        padding-top: 10px;
+
+    }
+
+    .userImage{
+        width: 40%;
+    }
+
+    .controlMessages{
+        right: 90%;
+        bottom: 7%;
+    }
+    #openweathermap-widget-21{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #openweathermap-widget-22{
+        display: none;
+    }
+    .anouncingTitle{
+        font-size: 22px;
+    }
+
+}

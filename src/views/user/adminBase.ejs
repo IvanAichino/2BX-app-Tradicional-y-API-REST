@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partialsGeneral/head")  %> 
+    <link rel="stylesheet" href="/css/stylesPackages.css">
+    <link rel="stylesheet" href="/css/stylesAdminForm.css">
+    <title>2BX - Admin</title>
+</head>
+<body>
+    <%- include("../partialsGeneral/header")  %>
+    <div class="bottomPage">
+        <form action="/userAdmin/adminForm" method="GET">
+            <button class="btnSubmit" type="submit">CREAR ACTIVIDAD</button>
+        </form>
+
+    <%- include("./partials/items")  %>
+    
+    </div>
+
+    <%- include("../partialsGeneral/footer")  %>
+</body>
+</html>

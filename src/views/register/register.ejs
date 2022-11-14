@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD -->
+<head>
+    <%- include("../partialsGeneral/head") %>
+    <link rel="stylesheet" href="/css/stylesRegister.css">
+    <script src = "/js/formRegister.js"></script>
+    <title>2BX / Register</title>
+</head>
+<body>
+    <!-- HEADER Y NAVBAR -->
+    <%- include("../partialsGeneral/header")  %>
+    
+<main>    
+     <section class="registerForm">
+        <h2 class="sectionTitle" >Registro / <a class="linkRegister" href="/login"> Login </a></h2>
+        
+        <form action="/register" method="POST" id="registerForm" enctype="multipart/form-data">
+        <h3 class="sectionSubtitle" >Datos Personales</h3>
+
+        <div class="form">
+            <label class="inputLabel" for="name">Nombre</label>
+            <input class="styledInput" type="text" name="name" id="name" value="<%= locals.oldData ? oldData.name : null %>">
+            <% if (locals.errors && errors.name) { %>
+                <p class="warning message">
+                    <i class="fa-solid fa-angles-up"></i><%= errors.name.msg %><i class="fa-solid fa-angles-up"></i>
+                </p>
+             
+            <% } %>
+               
+
+            <label class="inputLabel" for="lastName">Apellido</label>
+            <input class="styledInput" type="text" name="lastName" val id="lastName" value="<%= locals.oldData ? oldData.lastName : null %>">
+            <% if (locals.errors && errors.lastName) { %>
+                <p class="warning message">
+                    <i class="fa-solid fa-angles-up"></i><%= errors.lastName.msg %><i class="fa-solid fa-angles-up"></i> 
+                </p>
+             
+            <% } %>
+
+
+            <label class="inputLabel" for="birthDate">Fecha de nacimiento</label>
+            <input class="styledInput" type="date" name="birthDate" valu id="birthDate" value="<%= locals.oldData ? oldData.birthDate : null %>">
+            <% if (locals.errors && errors.birthDate) { %>
+                <p class="warning message">
+                    <i class="fa-solid fa-angles-up"></i><%= errors.birthDate.msg %><i class="fa-solid fa-angles-up"></i> 
+                </p>
+             
+            <% } %>
+
+
+            <label class="inputLabel" for="email">Email</label>
+            <input class="styledInput" type="email" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>">
+            <% if (locals.errors && errors.email) { %>
+                <p class="warning message">
+                    <i class="fa-solid fa-angles-up"></i><%= errors.email.msg %><i class="fa-solid fa-angles-up"></i> 
+                </p>
+             
+            <% } %>
+
+        </div>
+
+        <h3 class="sectionSubtitle" >Contraseña</h3>
+
+        <div class="form">
+            <label class="inputLabel" for="password">Contraseña</label>
+            <input class="styledInput" type="password" name="password" id="password">
+            <% if (locals.errors && errors.password) { %>
+                <p class="warning message">
+                    <i class="fa-solid fa-angles-up"></i><%= errors.password.msg %><i class="fa-solid fa-angles-up"></i> 
+                </p>
+             
+            <% } %>
+
+
+
+            <label class="inputLabel" for="passwordRepeat">Repetir contraseña</label>
+            <input class="styledInput" type="password" name="passwordRepeat" id="passwordRepeat">
+            <% if (locals.errors && errors.passwordRepeat) { %>
+                <p class="warning message">
+                    <i class="fa-solid fa-angles-up"></i><%= errors.passwordRepeat.msg %><i class="fa-solid fa-angles-up"></i> 
+                </p>
+             
+            <% } %>
+
+
+        </div>
+
+        <div class="termsAndConditions">
+            <p class="termsAndCondition" >Leer nuestros <a class="linkRegister" href="/*****"> terminos y condiciones.</a></p>
+            
+            <label class="inputLabel" for="checkbox"> <input type="checkbox" id="checkbox" value="accept"> Acepto los terminos y condiciones</label>
+        </div>
+        </form>
+
+
+        <button class="btnSubmit" type="submit" form="registerForm" value="Submit">Registrar</button>
+    </section>
+
+    <section class="image">
+        <div class="image">
+       <!-- <img src="/img/kaitsurf_640.jpg">-->
+        </div>  
+    </section>      
+    </main>
+
+       <!-- FOOTER -->
+    <%- include("../partialsGeneral/footer")  %>
+
+</body>
+</html>

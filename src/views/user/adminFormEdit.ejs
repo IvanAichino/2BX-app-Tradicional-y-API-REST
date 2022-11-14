@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD -->
+<head>
+  <%- include("../partialsGeneral/head") %>
+  <link rel="stylesheet" href="/css/stylesAdminForm.css">
+  <script src="/js/formAdmin.js"></script>
+  <title>2BX / Editando Paquete <%= packageToEdit.name %> </title>
+</head>
+<body>
+    <!-- HEADER Y NAVBAR -->
+    <%- include("../partialsGeneral/header")  %>
+    
+    <main>
+   
+      <section class="newProduct">
+         <h2 class="h2">Nuevo Paquete</h2>
+         
+         <form action="/userAdmin/adminForm/<%= packageToEdit.id %>?_method=PUT" method="POST" id="newProduct" enctype="multipart/form-data">
+           <h3 class="h3">Detalle general del Paquete</h3>
+ 
+           <div class="form">
+                   <div class="activity">
+                   <label class="adminFormLabel" for="activityName">Nombre de la actividad</label>
+                   <input class="inputAdminForm" type="text" name="activityName"  id="activityName" maxlength="30" value="<%= packageToEdit.name %>">
+                   <% if (locals.errors && errors.activityName) { %>
+                    <p class="warning message">
+                        <i class="fa-solid fa-angles-up"></i><%= errors.activityName.msg %><i class="fa-solid fa-angles-up"></i> 
+                    </p>
+                 
+                    <% } %>
+                   <label class="adminFormLabel" for="sport">Deporte</label>               
+                   <select class="listAF" name="sport" id="sport">
+                     <option value="" disabled selected>Seleccionar deporte</option>
+                     <% allSports.forEach(sport => { %>
+                        <option value="<%= sport.id %>" <%= (sport.id == packageToEdit.sport_id || sport.id == packageToEdit.sport) ? "selected" : "" %>><%= sport.name %></option>
+                     <% }); %>
+                   </select>
+                   <% if (locals.errors && errors.sport) { %>
+                    <p class="warning message">
+                        <i class="fa-solid fa-angles-up"></i><%= errors.sport.msg %><i class="fa-solid fa-angles-up"></i> 
+                    </p>
+                 
+                    <% } %>
+
+                   </div>
+ 
+                   <div class="activityDuration">
+                   <label class="adminFormLabel" for="startTime"><input class="timeInput" type="time" id="startTime" name="startTime" min="00:00" max="23:59" value="<%= packageToEdit.start_time %>">Horario inicio</label>
+                   <% if (locals.errors && errors.startTime) { %>
+                    <p class="warning message">
+                        <i class="fa-solid fa-angles-up"></i><%= errors.startTime.msg %><i class="fa-solid fa-angles-up"></i> 
+                    </p>
+                 
+                    <% } %>
+                   
+                   <label class="adminFormLabel" for="endTime"><input class="timeInput" type="time" id="endTime" name="endTime" min="00:00" max="23:59" value="<%= packageToEdit.end_time %>">Horario finalización</label>
+                   <% if (locals.errors && errors.endTime) { %>
+                    <p class="warning message">
+                        <i class="fa-solid fa-angles-up"></i><%= errors.endTime.msg %><i class="fa-solid fa-angles-up"></i> 
+                    </p>
+                 
+                    <% } %>
+                   </div>
+ 
+                   <label class="adminFormLabel" for="Location">Lugar</label>
+                   <select class="listAF" name="location" id="geoRegion">
+                    <option value="" disabled selected>Seleccionar provincia</option>
+                     <% allProvinceLocations.forEach(province => { %>                   
+                        <option value="<%= province.id %>" <%= (province.id == packageToEdit.location_id || province.id == packageToEdit.location) ? "selected" : null %> > <%= province.province %>  </option>
+                      
+                     <% }); %>
+                   </select>
+                   <% if (locals.errors && errors.location) { %>
+                    <p class="warning message">
+                        <i class="fa-solid fa-angles-up"></i><%= errors.location.msg %><i class="fa-solid fa-angles-up"></i> 
+                    </p>
+                 
+                    <% } %>
+                   
+                   <!-- <input type="text" placeholder="Neuquén" name="Location"  id="Location" maxlength="30" required>  -->
+ 
+                                   
+                   <p class="inputTitle" >Elementos incluidos</p>
+                   <div class="radio">
+                   <label class="adminFormLabel" for="lunch"><input type="radio" class="radio" name="lunch" id="lunch" value="<%= packageToEdit.lunch %>" 
+                    <%= packageToEdit.lunch == 1 ? "checked" : "" %> >Almuerzo</label>
+                   <label class="adminFormLabel" for="snack"><input type="radio" class="radio" name="snack" id="snack" value="<%= packageToEdit.snack %>" 
+                    <%= packageToEdit.snack == 1 ? "checked" : "" %>>Snacks</label>
+                   <label class="adminFormLabel" for="transport"><input type="radio" class="radio" name="transport" id="transport" value="<%= packageToEdit.transport %>" 
+                    <%= packageToEdit.transport == 1 ? "checked" : "" %>>Transporte desde el hotel</label>
+                    </div>
+                   <p class="inputTitle" >Requisitos</p>
+                   <div class="radio">
+                   <label class="adminFormLabel" for="experience"><input type="radio" class="radio" name="experience" id="experience" value="<%= packageToEdit.experience_level %>" 
+                    <%= packageToEdit.experience_level == 1 ? "checked" : "" %>>Experiencia previa</label>
+                   </div>      
+ 
+                   <label class="adminFormLabel" for="price">Precio</label>
+                   <input class="inputAdminForm" type="number" name="price"  id="price" value="<%= packageToEdit.price %>"> 
+                   <% if (locals.errors && errors.price) { %>
+                    <p class="warning message">
+                        <i class="fa-solid fa-angles-up"></i><%= errors.price.msg %><i class="fa-solid fa-angles-up"></i> 
+                    </p>
+                  <% } %>
+
+                   <label class="adminFormLabel" for="reservationPrice">Precio reserva</label>
+                   <input class="inputAdminForm" type="number" name="reservationPrice"  id="reservationPrice" value="<%= packageToEdit.reservation_price %>"> 
+                   <% if (locals.errors && errors.reservationPrice) { %>
+                    <p class="warning message">
+                        <i class="fa-solid fa-angles-up"></i><%= errors.reservationPrice.msg %><i class="fa-solid fa-angles-up"></i> 
+                    </p>
+                  <% } %> 
+
+                   <p class="inputTitle" >Esta en oferta?</p>
+                   <div class="radioButton" id="sale">
+                   <label class="adminFormLabel" for="saleRadio"><input type="radio" class="radio" name="radio" id="saleRadio" value="<%= packageToEdit.sale_ratio %>"  
+                    <%= packageToEdit.sale_ratio == 1 ? "checked" : "" %>>Si</label>
+                   <!-- <label for="saleRadio"><input type="radio" class="radio" name="radio" id="saleRadio" value=0 selected>No</label> -->
+                   </div>
+ 
+                   <label class="adminFormLabel" for="sale">% de descuento</label>
+                   <select class="listAF" name="sale" id="sale">
+                     <option value="" disabled selected>Seleccionar descuento</option>
+                     <option value=0.1 <%= packageToEdit.discount == 0.1 ? "selected" : "" %>>10%</option>
+                     <option value=0.25 <%= packageToEdit.discount == 0.25 ? "selected" : "" %>>25%</option>
+                     <option value=0.30 <%= packageToEdit.discount == 0.3 ? "selected" : "" %>>30%</option>
+                     <option value=0.5 <%= packageToEdit.discount == 0.5 ? "selected" : "" %>>50%</option>
+                   </select>
+ 
+                   
+ 
+ 
+               <h3 class="h3">Descripción del paquete</h3>        
+ 
+               <label class="adminFormLabel" for="description">Descripción de la actividad</label>
+               <input class="inputAdminForm" type="text" name="description"  id="description" maxlength="400" value="<%= packageToEdit.description  %>"> 
+                <% if (locals.errors && errors.description) { %>
+                  <p class="warning message">
+                      <i class="fa-solid fa-angles-up"></i><%= errors.description.msg %><i class="fa-solid fa-angles-up"></i> 
+                  </p>
+                <% } %>
+
+              <div class="upload"> 
+                <label class="adminFormLabel" for="image">Agregar imagenes</label>
+                <input class="inputUpload" type="file" name="image" id="image" accept="image/png, image/jpeg" multiple>    
+              </div>
+
+           </div>
+ 
+           <div class="buttons">
+             <button class="btnSubmit" type="submit" form="newProduct" value="Submit">Actualizar actividad</button>
+           </div> 
+ 
+         </form>
+         <form action="/userAdmin/adminBase/delete/<%= packageToEdit.id %>?_method=DELETE"  method="POST">
+          <div class="buttons">
+            <button class="btnReset" type="submit" class="reset">Eliminar actividad</button>
+          </div>
+         </form>
+         
+               
+     </section>
+      
+     <section class="image">
+           <div class="image"></div>
+     </section>
+     
+     </main>
+
+       <!-- FOOTER -->
+    <%- include("../partialsGeneral/footer")  %>
+
+</body>
+</html>

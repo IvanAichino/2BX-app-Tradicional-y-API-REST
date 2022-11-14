@@ -1,0 +1,393 @@
+@font-face {
+    font-family: "BPimperial Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("BPimperial Regular"), url("/fonts/BPimperial.woff") format("woff");
+    }
+    
+
+    @font-face {
+    font-family: "BPimperial Italic";
+    font-style: normal;
+    font-weight: normal;
+    src: local("BPimperial Italic"), url("/fonts/BPimperialItalic.woff") format("woff");
+    }
+    
+
+    @font-face {
+    font-family: "BPimperial Light";
+    font-style: normal;
+    font-weight: normal;
+    src: local("BPimperial Light"), url("/fonts/BPimperialLight.woff") format("woff");
+    }
+    
+
+    @font-face {
+    font-family: "BPimperial Light Italic";
+    font-style: normal;
+    font-weight: normal;
+    src: local("BPimperial Light Italic"), url("fonts/BPimperialLightItalic.woff") format("woff");
+    }
+  
+
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+/*HEADER*/
+
+body{
+    font-family: "Lato", sans-serif;
+}
+
+.upperBar{
+    font-family: "Lato";
+    background-color: #000000;
+    color:#79ffa0;
+    width: 100%;
+    padding: 2px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+
+}
+
+.logo{
+    width: 25vw;
+    height: auto; 
+    margin-left: auto; 
+    position: absolute;
+    top: 2px;
+    left: 36%; 
+
+}
+
+.logo:hover{
+    transition-property: border;
+    animation: borderAnimation 600ms ease-in-out 1s;
+}
+
+@keyframes borderAnimation {
+    20% {border-top: #79ffa0 1px solid;}
+    25% {border-top: #79ffa0 2px solid;}
+    45% {border-right: #79ffa0 1px solid;}
+    50% {border-right: #79ffa0 2px solid;}
+    70% {border-bottom: #79ffa0 1px solid;}
+    75% {border-bottom: #79ffa0 2px solid;}
+    95% {border-left: #79ffa0 1px solid;}
+    10% {border-left: #79ffa0 2px solid;}
+}
+
+
+.loginButton{
+    font-family: "Lato";
+    width: 10%;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 2px 10px;
+    padding: 2px 0px;
+    color: #9d3be1;
+    text-align: right;
+    transition-property: all;
+    transition-duration: 500ms;
+    
+}
+
+.loginButton:hover{
+    color: #79ffa0;
+}
+
+.loginButton:active{
+    color: #79ffa0;
+}
+
+/*para usuarios logueados*/
+.logoutButton{
+    font-family: "Lato";
+    width: 10%;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 2px 10px;
+    margin-left: 3px;
+    padding: 2px 0px;
+    color: #9d3be1;
+    background-color: #000000;
+    border: none;
+    text-align: right;
+    transition-property: all;
+    transition-duration: 500ms;
+    border-left: 2px solid #9d3be1;
+    padding-left: 2px;
+    
+}
+
+.logoutButton:hover{
+    color: #79ffa0;
+}
+
+.logoutButton:active{
+    color: #79ffa0;
+}
+
+.userBox{
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    padding: 2px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.userLogged{
+    font-family: "Lato";
+    width: 20%;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 2px 10px;
+    padding: 2px 0px;
+    color: #9d3be1;
+    text-align: center;
+    transition-property: all;
+    transition-duration: 500ms;
+    display: none;
+    
+}
+
+.profilePic{
+    width: 50%;
+    max-height: 50px;
+    border: 50%;
+    margin-right: 5px;
+}
+
+.profilePicFiller{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#bottomBar{
+    background-color: #000000;
+    color: #79ffa0;
+    width: 100%;
+    min-height: 140px;
+    transition: 0.3s ease;
+}
+a{
+    text-decoration: none;
+    color: #79ffa0;
+}
+
+.navBar{
+    font-family: "BPimperial Regular";
+    height: 100%;
+    letter-spacing: 2px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1%;
+}
+
+.navBar li{
+    margin: 0px 5px;
+    min-width: 115px;
+    text-shadow: 2px 2px 2px #9d3be1;
+    font-size: 110%;
+    display: none;
+    transition-property: all;
+    transition-duration: 500ms;
+}
+
+.navBar li a:hover{
+    color: #9d3be1;
+    text-shadow: 2px 2px 2px #79ffa0;
+    font-size: 112%;
+}
+
+
+
+#menu {
+    z-index: 2;
+  }
+  
+  #menu-bar {
+    width: 30px;
+    height: 25px;
+    margin: 20px 0 20px 20px;
+    cursor: pointer;
+  }
+  
+  .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #9d3be1;
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+  
+  #bar1 {
+    transform: translateY(-4px);
+  }
+  
+  #bar3 {
+    transform: translateY(4px);
+  }
+  
+  .navBurger {
+    transition: 0.3s ease;
+    display: none;
+  }
+  
+  .ulBurger {
+    padding: 0 22px;
+  }
+  
+  .liBurger {
+    list-style: none;
+    padding: 12px 0;
+  }
+  
+  .aBurger {
+    color: #79ffa0;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+
+  
+  .menu-bg, #menu {
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+  
+  .menu-bg {
+    z-index: 1;
+    width: 0;
+    height: 0;
+    margin: 30px 0 20px 20px;
+    background: radial-gradient(circle, #9d3be1, #9d3be1);
+    border-radius: 50%;
+    transition: 0.3s ease;
+  }
+  
+  .change {
+    display: block;
+  }
+  
+  .change .bar {
+    background-color: #79ffa0;
+  }
+  
+  .change #bar1 {
+    transform: translateY(4px) rotateZ(-45deg);
+  }
+  
+  .change #bar2 {
+    opacity: 0;
+  }
+  
+  .change #bar3 {
+    transform: translateY(-6px) rotateZ(45deg);
+  }
+  
+  .change-bg {
+    width: 520px;
+    height: 460px;
+    transform: translate(-60%,-30%);
+  }
+
+  .change-bottomBar{
+    height: 300px;
+  }
+
+
+
+
+
+
+
+
+
+@media (min-width: 426px){
+    .logo{
+        width: 15vw;
+        left: 42%;
+    }
+    .logoutButton{
+        font-size: 18px;
+    }
+    .userBox{
+        flex-direction: row;
+        padding: 2px;
+        justify-content: space-around;
+        align-items: center;
+        width: 200px;
+    }
+    .userLogged{
+        width: 100%;
+        margin-right: 10px;
+        display: block;
+    }
+    .profilePic{
+        display: none;
+    }
+
+
+}
+
+@media (min-width: 769px){
+    .logo{
+        width: 8vw;
+        left: 45%;
+    }
+    #bottomBar{
+        height: 120px;
+    }
+    .navBar li{
+        display: flex;
+        margin-top: 50px;
+        font-size: 1.5vw;
+        padding-bottom: 10px;
+        justify-content: center;
+    }
+    #menu {
+        display: none;
+      }
+    .menu-bg.change-bg{
+        display: none;
+    }
+    
+    .logoutButton{
+        font-size: 20px;
+    }
+    .userBox{
+        width: 300px;
+        flex-direction: row;
+        padding: 2px;
+        justify-content: space-around;
+        align-items: center
+    }
+    .userLogged{
+        width: 100%;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: right;
+        display: block;
+        
+    }
+    .profilePic{
+        width: 20%;
+        display: block;
+    }
+    
+
+  
+}

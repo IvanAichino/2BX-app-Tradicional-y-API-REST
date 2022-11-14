@@ -1,0 +1,266 @@
+/*SECCIÓN PAQUETES*/
+
+.bottomPage{
+    padding: 20px 10px;
+    color: #ebebeb;
+    margin: 0px;
+}
+
+.packagesContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5px;
+    text-align: center;
+
+}
+
+.controls{
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    color: #79ffa0;
+    cursor: pointer;
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+    line-height: 17px;
+    text-align: center;
+    align-self: center;
+}
+
+.controls:hover{
+    color: #9d3be1;
+    background: rgba(0,0,0,0.8)
+}
+
+.productItem{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 87%;
+    height: 280px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    transition: box-shadow 600ms;
+    transition-duration: 0.4s;
+}
+
+
+
+.productItem:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 4px 4px 4px rgba(121, 255, 160, 0.5);
+}
+
+.picturePackages{
+    width: 80%;
+    height: 45%;
+    /* border-radius: 10%; */
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+.picturesIn{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.productItem .p1{
+    font-size: 15px;
+    font-weight: bold;
+    color: #79ffa0;
+    padding: 5px;
+    margin-top: 10px;
+    display: block;
+}
+
+.productItem .p1:hover{
+    color: #9d3be1;
+    text-shadow: #79ffa0;
+}
+
+.a{
+    text-decoration: none;
+}
+
+.productItem.p2{
+    display: none;
+}
+
+.productItem.p3{
+    display: none;
+}
+
+.productItem.p4{
+    display: none;
+}
+
+.productItem.p5{
+    display: none;
+}
+
+.subContainer{
+    display: none;
+}
+
+.btnActionsCrud{
+    display: flex;
+    width: 50px;
+    font-family: "Lato", sans-serif;
+    background-color: rgb(121,255,160);
+    color: rgb(157,59,225);
+    height: 40px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2px;
+    margin: 5px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail {
+    text-align: left;
+    margin: 10px;
+    color: rgb(121,255,160);
+}
+
+.nameTitle {
+    font-family: BPImperial light;
+    font-size: 20px;
+    text-align: center;
+    color: #79ffa0;
+    text-shadow: 2px 2px 2px #9d3be1;
+    width: 100%;
+    padding: 0.2rem;
+    background-color: black;
+    /* font-size: 150%; */
+}
+
+.nameTitleContainer {
+    width: 100%;
+    background-color: black;
+}
+
+/* MENSAJE DE ERROR VALIDACIONES */
+
+p.warning.message {
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    padding: 1%;
+    margin: auto;
+    font-weight: bolder;
+    color: red;
+    background-color: rgba(255, 0, 0, 0.3);
+    width: 90%;
+    border-radius: 15px;
+
+}
+
+
+
+/*SECCIÓN MEDIA QUERIES*/
+
+@media (min-width: 426px){
+    .productItem{
+        width: 29%;
+        height: 300px;
+    }
+    .productItem.p2{
+        display: block;
+    }
+    
+    .productItem.p3{
+        display: block;
+    }
+    .subContainer{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    .btnActionsCrud{
+    display: flex;
+    width: 62px;
+    font-family: "Lato", sans-serif;
+    background-color: rgb(121,255,160);
+    color: rgb(157,59,225);
+    height: 40px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2px;
+    margin: 5px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    }
+}
+
+@media (min-width: 769px){
+    .productItem{
+        width: 21%;
+        height: 350px;
+    }
+    .productItem.p2{
+        display: block;
+    }
+    
+    .productItem.p3{
+        display: block;
+    }
+    
+    .productItem.p4{
+        display: block;
+    }
+    
+    .productItem.p5{
+        display: block;
+    }
+    .btnActionsCrud{
+        display: flex;
+        width: 90px;
+        font-family: "Lato", sans-serif;
+        background-color: rgb(121,255,160);
+        color: rgb(157,59,225);
+        height: 50px;
+        font-weight: bold;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        font-size: 15px;
+        padding: 5px;
+        margin: 10px;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+        transition-duration: 0.4s;
+    
+    }
+
+    .btnActionsCrud:hover{
+        background-color: rgb(157,59,225);
+        color: rgb(121,255,160);
+    } 
+    .nameTitle{
+        font-size: 22px;
+    }
+    .picturePackages{
+        width: 90%;
+        height: 54%;
+    }
+}

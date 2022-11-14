@@ -1,0 +1,177 @@
+.packagesSearchBar{
+    background-color: rgb(0,0,0);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+}
+
+.searchBarTitle{
+    font-weight: normal;
+    font-family: BPimperial Light;
+    color: #79ffa0;
+    text-shadow: 2px 2px 2px #9D3BE1;
+    justify-self: center;
+    align-self: center;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.filter{
+    color: #9D3BE1;
+    font-size: 0.9rem;
+    transition: all 600ms;
+    padding: 0.5rem;
+    align-items: center;
+    display: flex;
+}
+
+.filter:hover{
+    color: #79ffa0;
+    text-shadow: 2px 2px 2px #9D3BE1;
+}
+
+.filterInput{
+    padding: 4px 8px;
+    margin: 8px ;
+    border: 2px solid rgb(157,59,225);
+    border-radius: 25px;
+    background-color:rgb(235, 235, 235);
+    box-sizing: border-box;
+    transition-duration: 0.4s;
+    font-size: 0.9rem;
+}
+
+.filterInput:hover{
+    border: 2px solid #79ffa0;
+}
+
+.btnSubmit{
+    width: fit-content;
+    font-family: "Lato", sans-serif;
+    background-color: RGB(121,255,160);
+    border: none;
+    color: RGB(157,59,225);
+    height: 30px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    transition-duration: 0.4s;
+  }
+
+ 
+.btnSubmit:hover{
+    background-color: RGB(157,59,225);
+    color: RGB(121,255,160);
+} 
+
+
+.btnReset{
+    width: fit-content;
+    font-family: "Lato", sans-serif;
+    background-color: RGBA(121,255,160,0.4);
+    border: none;
+    color: RGB(157,59,225);
+    height: 30px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    transition-duration: 0.4s;
+  }
+
+ 
+  .btnReset:hover{
+    background-color: RGBA(157,59,225,0.3);
+    color: RGB(121,255,160);
+}
+
+a.linkReset {
+    outline: none;
+    text-decoration: none;
+}
+
+.formClassForMediaQuery{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
+
+
+/* MEDIA QUERY */
+
+@media screen and (min-width: 426px) {
+
+    .packagesSearchBar{
+        flex-flow: row wrap;
+        align-items: baseline;
+        
+    }
+
+    .filter{
+        font-size: 1rem;
+    }
+
+    .filterInput{
+        font-size: 1rem;
+    }
+
+    .searchBarTitle{
+        font-size: 1.1rem;
+    }
+
+    .formClassForMediaQuery{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: baseline;
+        justify-content: space-evenly;
+    }
+
+
+}
+
+@media screen and (min-width: 769px) {
+
+    .packagesSearchBar{
+        flex-flow: row wrap;
+        align-items: baseline;
+    }
+
+    .packagesSearchBar div.filter{
+        font-size: 1.1rem;
+    }
+
+    .filterInput{
+        font-size: 1.1rem;
+    }
+
+    .searchBarTitle{
+        font-size: 1.2rem;
+    }
+
+}
+
+
+

@@ -1,0 +1,58 @@
+<section class="packagesSearchBar">
+    <div class="searchBarTitle">
+        <h3>Filtros de busqueda</h3>
+    </div>
+
+    <form class="formClassForMediaQuery" action="/packages/search" method="POST">
+        <div class="filter">
+            <label for="adrenalineLevel">Nivel de Adrenalina</label>
+            <select class="filterInput" name="adrenalineLevel" id="adrenalineLevel">
+                <option value="" disabled selected>0</option>
+                <option value=5>5</option>
+                <option value=4>4</option>
+                <option value=3>3</option>
+                <option value=2>2</option>
+                <option value=1>1</option>
+            </select>
+        </div>
+
+        <div class="filter">
+            <label for="sport">Deporte</label>
+            <select class="filterInput" name="sport" id="sport">
+                <option value="" disabled selected>Deporte</option>
+                <% allSports.forEach(sport => { %>
+                    <option value=<%= sport.id %>> <%= sport.name %>  </option>
+                <% }) %>
+            </select>
+        </div>
+
+        <div class="filter">
+            <label for="location">Provincia</label>
+            <select class="filterInput" name="location" id="location">
+                <option value="" disabled selected>Provincia</option>
+                <% allLocations.forEach(location => { %>
+                    <option value=<%= location.id %>> <%= location.province %>  </option>
+                <% }) %>
+            </select>
+        </div>
+
+        <div class="filter" >
+            <label for="price">Precio Máximo</label>
+            <input class="filterInput" type="text" name="price" id="price" placeholder="Ingrese valor max">
+        </div>
+
+        <div class="filter">
+            <label for="sale">Paquetes en oferta</label>
+            <input class="filterInput" type="checkbox" name="sale" id="sale">
+        </div>
+        
+
+
+        <button class="btnSubmit" type="submit">Filtrar</button>
+        <button class="btnReset" ><a class="linkReset" href="/packages" >Eliminar Filtros</a></button>
+    </form>
+
+    
+    
+
+</section>

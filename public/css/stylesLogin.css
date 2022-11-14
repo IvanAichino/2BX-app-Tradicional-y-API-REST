@@ -1,0 +1,215 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "BPimperial Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("BPimperial Regular"), url("/fonts/BPimperial.woff") format("woff");
+}
+
+
+.sectionTitle{
+    font-size: 32px;
+    font-family: "BPimperial Regular";
+    display: block;
+    text-align: center;
+    padding-top: 7%;
+    color: RGB(157,59,225);
+    text-shadow: 2px 2px 2px RGB(121,255,160)
+}
+
+#loginForm {
+    
+    font-family: "Lato", sans-serif;
+    display: block;
+    text-align: center;
+    padding: 5%;
+}
+
+.textPW{
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+    display: block;
+    text-align: center;
+    padding-top: 3%;
+    color: gray;
+}
+
+.linkLogin:link{
+    color:RGB(203,108,230);
+    text-shadow: 2px 2px 2px RGB(157,59,225);
+    cursor: pointer;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.linkLogin:hover {
+    font-weight: bold;
+    color: RGBA(157,59,225,0.5);
+    text-shadow: 2px 2px 2px RGB(121,255,160)
+
+  }
+
+/* inputs */
+.inputLabel{
+    font-size: 18px;
+    display: block;
+    text-align: left;
+    margin-left: 7%;
+    color: gray;
+    padding-top: 2%;
+}
+
+.inputLogin{
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px ;
+    display: inline-block;
+    border: 3px solid RGB(157,59,225);
+    border-radius: 25px;
+    background-color:rgb(235, 235, 235);
+    box-sizing: border-box;
+    transition-duration: 0.4s;
+    
+  }
+
+  .inputLogin:hover, .inputLogin:focus{
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px ;
+    display: inline-block;
+    border-bottom: 3px solid RGB(121,255,160);
+    border-top: 3px solid rgb(235, 235, 235);
+    border-left: 3px solid rgb(235, 235, 235);
+    border-right: 3px solid rgb(235, 235, 235);
+    border-radius: 0px;
+    outline: none;
+    box-sizing: border-box;  
+  }  
+
+
+/* button */
+.btnSubmit{
+    width: 25%;
+    font-family: "Lato", sans-serif;
+    background-color: RGB(121,255,160);
+    border: none;
+    color: RGB(157,59,225);
+    height: 50px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 0px;
+    margin-bottom: 15px;
+    transition-duration: 0.4s;
+  }
+
+
+.btnSubmit:hover{
+    background-color: RGB(157,59,225);
+    color: RGB(121,255,160);
+} 
+
+.textPW{
+    margin-bottom: 12px;
+}
+
+/* MENSAJE DE ERROR VALIDACIONES */
+
+p.warning.message {
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    padding: 1%;
+    margin: auto;
+    font-weight: bolder;
+    color: red;
+    background-color: rgba(255, 0, 0, 0.3);
+    width: 90%;
+    border-radius: 15px;
+
+}
+
+p.warning.message i {
+    padding: 0 5% 0 5%;
+}
+
+/* media query tablet */
+
+@media (min-width: 426px){
+ 
+    main{display: flex;}
+
+    section.loginForm{
+        display: block;
+        width: 50%;
+        float: left;
+        position: relative;        
+    }
+
+    section.image{
+        display: block;
+        width: 50%;
+        float: right;
+        position: relative;
+        height:auto;
+        text-align: center;
+        background-size: cover;
+        background-position: center;       
+
+    }
+
+    div.image{
+        height: 100%;
+        position:relative;
+        background:  url("/img/surfing_1280.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+}
+
+/* media query desktop */
+@media (min-width: 769px){
+      
+    main{display: flex;}
+
+    section.loginForm{
+        display: block;
+        width: 35%;
+        float: left;
+        position: relative;       
+    }
+
+    section.image{
+        display: block;
+        width: 65%;
+        float: right;
+        position: relative;
+        height:auto;
+        text-align: center;
+        background-size: cover;
+        background-position: center;        
+
+    }
+
+    div.image{
+        height: 100%;
+        position:relative;
+        background:  url("/img/surfing_1280.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+   
+}

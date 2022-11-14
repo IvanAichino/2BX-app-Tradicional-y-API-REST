@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head>
+<%- include("../partialsGeneral/head") %>
+<link rel="stylesheet" href="/css/stylesheetIndex.css">
+<link rel="stylesheet" href="/css/stylesPackages.css">
+<link rel="stylesheet" href="/css/stylesProductDetail.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+<title>Detalle de Paquete : <%= packageToDetail.name %> </title>
+</head>
+<body>
+    <!-- HEADER Y NAVBAR -->
+    <%- include("../partialsGeneral/header")  %>
+    <main>
+        <section class="productDetail">
+            <div class="productDetailImage">
+                <!-- <img src="/img/rockClimbingMountain_1280.jpg" alt="Imagen Random"> -->
+                <img src="/img/activities/<%= packageToDetail.image %> " alt="Imagen del Deporte">
+            </div>
+            <article class="productDetailText">
+
+                <h1>Detalle general del Paquete</h1>
+
+                <div class="textContainer">
+                    
+                    <div class="item">
+                        <h4><%= packageToDetail.name %> </h4>
+                    </div>
+
+                    <div class="item">
+                        <ul type="none">
+                            <li>Duracion: <%= packageToDetail.start_time %>  a <%= packageToDetail.end_time %> hs</li>
+                            <li>Lugar: <%= packageToDetail.Location.province %></li>
+                            <li>Incluye: 
+                                <ul type="none">
+                                    <li><%= packageToDetail.lunch == 1 ? "Almuerzo Liviano" : null %></li>
+                                    <li><%= packageToDetail.snack == 1 ? "Snack" : null %></li>
+                                    <li><%= packageToDetail.transport == 1 ? "Transporte" : null %></li>
+                                    <li><%= packageToDetail.Sport.health_insurance == 1 ? "Seguro Médico" : null %></li>
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="item">
+                        <h4>Requisitos:</h4>
+                    </div>
+
+                    <div class="item">
+                        <ul type="none">
+                            <li><%= packageToDetail.Sport.age == true ? "Mayores de 18 años" : null %></li>
+                            <li><%= packageToDetail.Sport.minors == 1 ? "Menores acompañados de un mayor" : "Mayores de 18 años" %></li>
+                            <li><%= packageToDetail.Sport.doctor_aproval == 1 ? "Certificado médico" : null %></li>
+                            <li><%= packageToDetail.experience == true ? "Experiencia" : null %></li>
+                        </ul>
+                    </div>
+
+                    <div class="item">
+                        <p>PRECIO : $<%= packageToDetail.price %> + reserva</p>
+                    </div>
+
+                    <div class="item">
+                        <p>Compra tu voucher y coordinamos el dia de la actividad</p>
+                    </div>
+
+                    <div class="reserva">
+                        <h4>Reserva</h4>
+                    </div>
+
+                    <div class="precio">
+                        <p>$<%= packageToDetail.reservation_price %></p>
+                    </div>
+                </div>
+                <div class="buyButton">
+                    <a><form action="/productCart/<%= packageToDetail.id %>" method="GET" enctype="multipart/form-data">
+                    <button>Agregar al Carrito</button></form></a>
+                   
+                </div>
+                
+
+            </article>
+        </section>
+
+        <section class="productDescription">
+            <article class="description">
+                <div class="titleContainer">
+                    <h2>Descripcion del paquete</h2>
+                </div>
+                
+                <ul type="disc">
+                    <li>¿En qué consiste la actividad?</li>
+                        <p><%= packageToDetail.description %></p>
+                    <li>¿Qué debo llevar?</li>
+                        <p>Ropa comoda, abrigo y calzado adecuado para trekking. Proteccion solar.</p>
+                    <li>Seguridad</li>
+                        <p>Los instructores se encuentran certificados para llevar a cabo las actividades y el equipo provisto se encuentra homologado y en constante chequeo.</p>
+                    <li>Clima</li>
+                        <p>En caso de clima adverso se reprogramará la actividad</p>
+                    <li>Lugar</li>
+                        <p><%= packageToDetail.Location.province %> - Geo Region : <%= packageToDetail.Location.geo_region %></p>
+
+                </ul>
+            </article>
+        </section>
+        <!-- CARROUSEL PACKAGES -->
+        <%- include("./partials/packagesDetailPackagesCarrousel") %> 
+        
+
+    </main>
+    <!-- FOOTER -->
+    <%- include("../partialsGeneral/footer")  %>
+
+</body>
+
+</html>
